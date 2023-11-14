@@ -7,6 +7,7 @@ import {colores} from '../theme/AppTheme';
 import {Text, Platform} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import { TobTab } from './TobTab';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabAndroid />;
@@ -33,16 +34,16 @@ export const Tabs = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1':
-              iconName = 'T1';
+              iconName = 'logo-react';
               break;
             case 'TobTab':
-              iconName = 'T2';
+              iconName = 'logo-npm';
               break;
             case 'StackNavigator':
-              iconName = 'STk';
+              iconName = 'logo-facebook';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={30} color={colores.primario} />
         },
       })}>
    
@@ -80,16 +81,16 @@ export const TabsIOS = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1':
-              iconName = 'T1';
+              iconName = 'logo-react';
               break;
             case 'TobTab':
-              iconName = 'T2';
+              iconName = 'logo-github';
               break;
             case 'StackNavigator':
-              iconName = 'STk';
+              iconName = 'logo-facebook';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={30} color={colores.primario} />
         },
       })}>
       <TabIos.Screen name="Tab1" options={{title: 'Tab 1'}} component={Tab1} />

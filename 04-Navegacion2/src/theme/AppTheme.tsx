@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
     borderRadius: 150,
   },
   menuContainer: {
+    flexDirection:'column',
     marginVertical: 30,
     marginHorizontal: 50,
     // backgroundColor: 'blue',
